@@ -1,0 +1,7 @@
+parameters:
+#    wlm_facturation.example.class: Wlm\FacturationBundle\Example
+
+services:
+#    wlm_facturation.example:
+#        class: %wlm_facturation.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

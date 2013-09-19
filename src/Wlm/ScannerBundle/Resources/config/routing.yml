@@ -1,0 +1,7 @@
+wlm_scanner_homepage:
+    pattern:  /scanner/{id}
+    defaults: { _controller: WlmScannerBundle:Scanner:scanner }
+
+wlm_scanner_url:
+    pattern:  /location/{id}
+    defaults: { _controller: WlmScannerBundle:Scanner:scanner }

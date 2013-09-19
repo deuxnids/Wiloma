@@ -1,0 +1,76 @@
+wlm_scanner:
+    resource: "@WlmScannerBundle/Resources/config/routing.yml"
+    prefix:   /wlm
+
+wlm_till:
+    resource: "@WlmTillBundle/Resources/config/routing.yml"
+    prefix:   /wlm
+
+wlm_facturation:
+    resource: "@WlmFacturationBundle/Resources/config/routing.yml"
+    prefix:   /
+
+tms_race:
+    resource: "@TmsRaceBundle/Resources/config/routing.yml"
+    prefix:   /tms
+
+tms_runner:
+    resource: "@TmsRunnerBundle/Resources/config/routing.yml"
+    prefix:   /tms
+
+wlm_operation:
+    resource: "@WlmOperationBundle/Resources/config/routing.yml"
+    prefix:   /wlm
+
+wlm_equipment:
+    resource: "@WlmEquipmentBundle/Resources/config/routing.yml"
+    prefix:   /wlm
+
+wlm_client:
+    resource: "@WlmClientBundle/Resources/config/routing.yml"
+    prefix:   /wlm
+
+ghw_match:
+    resource: "@GhwMatchBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ghw_writer:
+    resource: "@GhwWriterBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ghw_client:
+    resource: "@GhwClientBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ghw_main:
+    resource: "@GhwMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+ghw_user:
+    resource: "@GhwUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_register:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+    
+    
+_demo:
+        resource: "@SaadTaziGChartBundle/Resources/config/routing.yml"
+        type:     yaml
+        prefix:   /gchart

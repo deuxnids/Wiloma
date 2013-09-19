@@ -1,0 +1,7 @@
+
+Wlm\ClientBundle\Entity\Client:
+   properties:
+        email:
+            - Email:
+                message: email invalide.
+                checkMX: true

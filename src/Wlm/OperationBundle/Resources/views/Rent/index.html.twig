@@ -1,0 +1,57 @@
+{% extends '::layoutWlm.html.twig' %}
+
+{% block body %}
+
+
+<div class="row">
+  <div id="content" class="span8">
+    <h3>Locations</h3>
+  </div>
+  <div id="content" class="span4">
+  <br>
+    <form id="form-search-client" method="get" >
+      <input name="searchField" type="text" class="input-medium search-query">
+      <button type="submit" class="btn">Chercher</button>
+    </form>
+  </div>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th> Date de départ </th>
+      <th> Date de retour </th>
+      <th> Equipement </th>
+      <th> Client </th> 
+    </tr>
+  </thead>
+  <tbody>
+  {% for rent in rents %}  
+  <tr>
+   
+    <td> {{ rent.outDate|date("d/m/Y")	}}  </td>
+    <td> {{ rent.inDate|date("d/m/Y")	}}  </td>
+    <td>     	<a href="{{path('wlm_equipment_equipmentProfile', {'id':rent.equipment.id} )}}"> 
+				{{rent.equipment.master.name}} 
+    			</a>  
+    </td>
+    <td>     	<a href="{{path('wlm_client_profile', {'id':rent.client.id} )}}"> 
+				{{rent.client.lastName}} {{ rent.client.firstName}}
+    			</a>  
+    </td>
+    <th> <a class="btn-small btn-danger" href="{{ path('wlm_operation_delete',{'id':rent.id}) }}"><i class="icon-trash icon-white"></i></a> </th>
+    
+    
+
+	
+  </tr>
+  {% endfor %}
+  </tbody>
+</table> 
+
+
+{% endblock %}
+
+
+
+

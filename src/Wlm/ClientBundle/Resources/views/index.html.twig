@@ -1,0 +1,62 @@
+{% extends '::layoutWlm.html.twig' %}
+
+{% block body %}
+
+
+<div class="row">
+  <div id="content" class="span8">
+    <h3>Clients</h3>
+  </div>
+  <div id="content" class="span4">
+  <br>
+    <form id="form-search-client" method="get" >
+      <input name="searchField" type="text" class="input-medium search-query">
+      <button type="submit" class="btn">Chercher</button>
+    </form>
+  </div>
+</div>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nom, Prénom</th>
+      <th>Statut</th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for client in clients %}  
+  <tr>
+    <td>
+    	<a href="{{path('wlm_client_profile', {'id':client.id} )}}"> 
+    		{{ client.lastName}}, {{ client.firstName}} 
+    	</a>
+    </td>
+    <td class="text-success">   
+
+    
+    </td>
+	<td>
+		<div class="btn-group">
+			<a class="btn btn-success dropdown-toggle" data-toggle="dropdown" href="#">
+				Ajouter
+				<span class="caret"></span>
+			</a>
+			<ul class="dropdown-menu">
+				<!-- dropdown menu links -->
+                <li><a tabindex="-1" href="{{path('wlm_rent_add', {'id':client.id} )}}">Location</a></li>
+                <li><a tabindex="-1" href="#">Achat</a></li>
+			</ul>
+		</div>
+    </td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table> 
+
+
+{% endblock %}
+
+
+
+

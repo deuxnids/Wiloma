@@ -1,0 +1,36 @@
+{% render(controller("WlmClientBundle:Client:profile",{'client':client})) %}
+
+
+<div id="modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  	<div class="modal-header">
+    	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+     	<h3>Nouvelles Locations  </h3>
+  	</div>
+  	        <div id = "alert_placeholder_modal"></div>
+  	
+  	<div class="modal-body">
+		<form method="post" {{ form_enctype(form) }}>
+				 {{ form_errors(form) }}
+		
+		{{ form_row (form._token) }}
+			<table class="table table-condensed" id="addLocationTable">
+        		<div  class="barcode-id"  data-prototype="{{ form_widget(form.rents.vars.prototype.code)  |e }}"></div>
+        		<div  class="outDate-id"  data-prototype="{{ form_widget(form.rents.vars.prototype.outDate)  |e }}"></div>
+        		<div  class="inDate-id"   data-prototype="{{ form_widget(form.rents.vars.prototype.inDate)   |e }}"></div>  
+				<thead>
+					<td>Départ</td>
+					<td>Retour</td>
+					<td>Code Bar</td>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+			<input class="btn btn-primary" type="submit" value="Enregistrer" />
+			<a href="#" id="btn_add" class="btn btn-success"> Ajouter <i class="icon-plus-sign icon-white"></i></a>
+			
+		</form>
+   	</div>
+  	<div class="modal-footer">
+	    <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
+  	</div>
+</div>

@@ -1,0 +1,66 @@
+{% extends '::layoutWlm.html.twig' %}
+
+{% block body %}
+
+<div class="row">
+	<div id="content" class="span6">
+		<h4>
+		<a class="btn-small btn-danger" href="{{ path('wlm_client_delete',{'id':client.id}) }}"><i class="icon-trash icon-white"></i></a>
+		 
+		Données personnelles <a href="{{ path('wlm_client_edit',{'id':client.id}) }}" ><i class="icon-pencil"></i></a></h4>  
+		<dl class="dl-horizontal">
+			<dt>Nom</dt>     <dd>{{ client.lastName }}</dd>
+			<dt>Prénom</dt>  <dd>{{ client.firstName}}</dd>
+			<dt>Ville</dt>   <dd>{{ client.city     }}</dd>
+			<dt>Adresse</dt>   <dd>{{ client.address     }}</dd>
+			<dt>Code Postal</dt>   <dd>{{ client.zip     }}</dd>
+			<dt>Email</dt>   <dd>{{ client.email     }}</dd>			
+		</dl>
+	</div>
+	<div id="content" class="span6">
+		<div class="well">
+			<h4>Facturation</h4>
+      		{{ render(controller('WlmFacturationBundle:Facturation:facturation', { 'client': client.id })) }}
+		</div>
+	</div>
+</div>
+
+<hr>
+<h4>  
+		<div class="btn-group">
+			<a class="btn  dropdown-toggle" data-toggle="dropdown" href="#"> Locations  <span class="caret"></span> </a>
+			<ul class="dropdown-menu">
+                <li class="dropdown-submenu"> <a tabindex="-1" href="#">Nouveau</a>
+    				<ul class="dropdown-menu">
+               			 <li><a tabindex="-1" href="{{path('wlm_rent_add', {'id':client.id} )}}">Location</a></li>
+   					</ul>
+  				</li>
+                
+                <li class="dropdown-submenu"> <a tabindex="-1" href="#">Trier</a>
+    				<ul class="dropdown-menu">
+    					<li><a tabindex="-1" href="{{path('wlm_client_profile', {'id':client.id} )}}?list=active">	actives	</a></li> 
+                		<li><a tabindex="-1" href="{{path('wlm_client_profile', {'id':client.id} )}}?list=all">		toutes	</a></li>
+   					</ul>
+  				</li>
+			</ul>
+		</div>
+</h4> 
+
+{% if list == "all" %}
+{{ render(controller('WlmOperationBundle:Operation:getAll',{"id":client.id})) }}
+{% else %}
+{{ render(controller('WlmOperationBundle:Operation:getActive',   {"id":client.id})) }}
+{% endif %}
+
+
+<hr>
+<h4>Achats</h4>
+
+
+
+
+{% endblock %}
+
+
+
+

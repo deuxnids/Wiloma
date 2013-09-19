@@ -1,0 +1,59 @@
+{% extends '::layoutWlm.html.twig' %}
+
+{% block body %}
+<div class="row">
+  <div id="content" class="span8">
+    <h3>Caisse </h3>
+  </div>
+  <div id="content" class="span4">
+  <br>
+    <form id="form-search-client" method="get" >
+      <input name="searchField" type="text" class="input-medium search-query">
+      <button type="submit" class="btn">Chercher</button>
+    </form>
+  </div>
+</div>
+
+<div id="chart2">&nbsp;</div>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th> Client </th>
+      <th> Montant </th>
+      <th> Mode de payement </th>
+      <th> Equipement </th>
+      <th> </th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for till in tills %}  
+  <tr>
+  		<td>     	<a href="{{path('wlm_client_profile', {'id':till.operation.client.id} )}}"> 
+{{ till.operation.client.lastName}} {{ till.operation.client.firstName}}
+    	</a>  </td>
+    	<td>     {{ till.amount}}.- </td>
+      	<td>     {{ till.mode}} </td>
+  		<td>     	<a href="{{path('wlm_equipment_equipmentProfile', {'id':till.operation.equipment.id} )}}"> 
+ {{ till.operation.equipment.master.name}}, {{ till.operation.equipment.code}}
+    	</a>  </td>   
+    	<th> <a class="btn-small btn-danger" href="{{ path('wlm_till_delete',{'id':till.id}) }}"><i class="icon-trash icon-white"></i></a> </th>
+    	 	
+  </tr>
+  {% endfor %}
+  </tbody>
+</table> 
+
+<script>
+$(function() {
+{{ gchart_line_chart(dataTable2, 'chart2', 800, 200) }}
+});
+</script>
+        
+
+{% endblock %}
+
+
+
+

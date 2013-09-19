@@ -1,0 +1,3 @@
+ghw_main_homepage:
+    pattern:  /
+    defaults: { _controller: GhwMainBundle:Default:index }

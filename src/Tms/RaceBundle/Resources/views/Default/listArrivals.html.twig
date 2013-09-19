@@ -1,0 +1,30 @@
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Arrival Time</th>
+      <th>Code</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for arrival in arrival_list %}  
+  <tr>
+    <td>{{loop.index}} </td>
+    <td>  {{ arrival.timeStop}}   </td>
+        <td> {{ arrival.code}}  </td>
+
+
+    <td>
+    <button class="btn btn-danger" id="deleteButton" attrId={{arrival.id}} type="button"><i class="icon-trash icon-white"></i></button>
+    </td>
+
+       
+  </tr>
+  {% endfor %}
+
+
+  </tbody>
+</table> 
+
+

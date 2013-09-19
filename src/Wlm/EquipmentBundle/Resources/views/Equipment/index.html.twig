@@ -1,0 +1,46 @@
+{% extends '::layoutWlm.html.twig' %}
+
+{% block body %}
+<div class="row">
+  <div id="content" class="span8">
+    <h3>Equipements </h3>
+  </div>
+  <div id="content" class="span4">
+  <br>
+    <form id="form-search-client" method="get" >
+      <input name="searchField" type="text" class="input-medium search-query">
+      <button type="submit" class="btn">Chercher</button>
+    </form>
+  </div>
+</div>
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Code Barre</th>
+      <th>Taille</th>
+      <th>Marque</th>
+      <th>Nom</th>
+      <th>Prix</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for equipment in equipments %}  
+  <tr>
+    <td>      <a href="{{path('wlm_equipment_equipmentProfile', {'id':equipment.id} )}}"> {{ equipment.code}} </a></td>
+    <td>      <a href="{{path('wlm_equipment_equipmentProfile', {'id':equipment.id} )}}"> {{ equipment.size}} </a></td>
+    <td>      <a href="{{path('wlm_equipment_equipmentProfile', {'id':equipment.id} )}}"> {{ equipment.master.manufacturer}} </a></td>
+    <td>      <a href="{{path('wlm_equipment_equipmentProfile', {'id':equipment.id} )}}"> {{ equipment.master.name}} </a></td>
+    <td>       {{ equipment.master.price}} </td>
+  </tr>
+  {% endfor %}
+  </tbody>
+</table> 
+
+
+{% endblock %}
+
+
+
+

@@ -1,0 +1,31 @@
+{% extends '::layoutWlm.html.twig' %}
+
+{% block body %}
+
+<div class="row">
+	<div id="content" class="span6">
+	
+		<h4> 	<a class="btn-small btn-danger" href="{{ path('wlm_equipment_deleteMaster',{'id':master.id}) }}"><i class="icon-trash icon-white"></i></a>
+		  Données du Master <a  href="{{path('wlm_equipment_editMaster', {'id':master.id} )}}"> <i class="icon-pencil"></i> </a></h4>  
+		
+		<dl class="dl-horizontal">
+			<dt>Nom</dt>  <dd>{{ master.name }}</dd>
+			<dt>Marque</dt>   <dd>  {{ master.manufacturer }}  </dd>
+			<dt>Description</dt>  <dd>{{ master.description }}</dd>		
+			<dt>Prix</dt>  <dd>{{ master.price }}</dd>			
+				
+		</dl>
+		
+</div>
+
+</div>
+
+
+
+
+{% endblock %}
+
+
+
+
+

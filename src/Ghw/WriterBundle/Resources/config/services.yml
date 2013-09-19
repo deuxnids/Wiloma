@@ -1,0 +1,7 @@
+parameters:
+#    ghw_writer.example.class: Ghw\WriterBundle\Example
+
+services:
+#    ghw_writer.example:
+#        class: %ghw_writer.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

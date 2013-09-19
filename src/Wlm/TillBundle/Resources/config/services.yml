@@ -1,0 +1,7 @@
+parameters:
+#    wlm_till.example.class: Wlm\TillBundle\Example
+
+services:
+#    wlm_till.example:
+#        class: %wlm_till.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,51 @@
+
+{% extends 'GhwWriterBundle::layout.html.twig' %}
+
+{% block bodyWriter %}
+
+
+<div class="well well-small">
+
+    <dl>
+      <dt>Nom d'utilisateur du client : </dt>
+      <dd>  {{ request.user }} </dd>
+      <br>
+      <dt>Descritpion : </dt>
+      <dd> {{ request.description|e }} </dd>
+    </dl>
+
+</div>
+
+
+
+<!-- Button to trigger modal -->
+<a href="#myModal" role="button" class="btn" data-toggle="modal">Ecrire Lettre</a>
+ 
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h4 id="myModalLabel"> Ecrire lettre </h4>
+  </div>
+  <div class="modal-body">
+    <p>Nom d'utilisateur du client: {{ request.user }}</p>
+  <form id="modal-form" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+  </form>
+
+
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    <input type="submit" id="modal-form-submit" class="btn btn-primary" />
+
+
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}

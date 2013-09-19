@@ -1,0 +1,4 @@
+ghw_user_homepage:
+    pattern:  /user
+    defaults: { _controller: GhwUserBundle:Default:index }
+

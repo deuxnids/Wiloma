@@ -1,0 +1,7 @@
+parameters:
+#    wlm_material.example.class: Wlm\MaterialBundle\Example
+
+services:
+#    wlm_material.example:
+#        class: %wlm_material.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

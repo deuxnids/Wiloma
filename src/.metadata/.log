@@ -1,0 +1,61 @@
+!SESSION 2013-08-25 07:10:15.446 -----------------------------------------------
+eclipse.buildId=4.3.0.I20130605-2000
+java.version=1.7.0_25
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.standard.product
+
+!ENTRY org.eclipse.jface 2 0 2013-08-25 07:10:37.987
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2013-08-25 07:10:37.987
+!MESSAGE A conflict occurred for CTRL+G:
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,Declaration in Workspace,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@111dff,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+G,
+	ParameterizedCommand(Command(org.pdtextensions.core.ui.generategetters,Generate Getters and Setters,
+		Generate Getters and Setters,
+		Category(org.eclipse.ui.category.edit,Edit,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@112dbf2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.dubture.symfony.core 2 2 2013-08-25 07:12:47.340
+!MESSAGE class org.eclipse.php.internal.core.compiler.ast.nodes.PHPCallExpression could not be cast to VariableReference in loginAction
+
+!ENTRY com.dubture.symfony.core 2 2 2013-08-25 07:12:47.395
+!MESSAGE Unable to parse view variable from [<Scalar start="390" end="430" type="string" value="&apos;AcmeDemoBundle:Welcome:index.html.twig&apos;">
+</Scalar>
+]
+
+!ENTRY com.dubture.composer.core 4 4 2013-08-25 07:12:49.123
+!MESSAGE Installing symfony/framework-standard-edition (v2.2.3)
+  - Installing symfony/framework-standard-edition (v2.2.3)
+    Loading from cache
+Created project in wlm2
+Loading composer repositories with package information
+Installing dependencies (including require-dev) from lock file
+  - Installing doctrine/lexer (v1.0)
+    Loading from cache
+  - Installing doctrine/annotations (v1.1.1)
+    Loading from cache
+  - Installing doctrine/cache (v1.0)
+    Loading from cache
+  - Installing twig/twig (v1.13.1)
+    Downloading: connection...    Downloading: 0%               Downloading: 10%    Downloading: 25%    Downloading: 35%    Downloading: 45%    Downloading: 55%    Downloading: 60%    Downloading: 70%    Downloading: 80%    Downloading: 90%    Downloading: 100%
+
+
+!ENTRY com.dubture.composer.core 4 4 2013-08-25 07:12:49.611
+!MESSAGE PHP Warning:  require_once(/home/denis/Documents/Programmation/Apache/Symfony/src/wlm2/app/bootstrap.php.cache): failed to open stream: No such file or directory in /home/denis/Documents/Programmation/Apache/Symfony/src/wlm2/app/console on line 10
+PHP Fatal error:  require_once(): Failed opening required '/home/denis/Documents/Programmation/Apache/Symfony/src/wlm2/app/bootstrap.php.cache' (include_path='.:/usr/share/php:/usr/share/pear') in /home/denis/Documents/Programmation/Apache/Symfony/src/wlm2/app/console on line 10
+
+
+!ENTRY com.dubture.symfony.core 2 2 2013-08-25 07:12:49.648
+!MESSAGE Could not retrieve project for saving the debug container

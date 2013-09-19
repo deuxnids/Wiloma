@@ -1,0 +1,66 @@
+{% extends '::layoutWlm.html.twig' %}
+
+{% block body %}
+
+<div class="row">
+	<div id="content" class="span6">
+		<h4>	<a class="btn-small btn-danger" href="{{ path('wlm_equipment_deleteEquipment',{'id':equipment.id}) }}"><i class="icon-trash icon-white"></i></a>
+		 
+		 Données spécifiques <a  href="{{path('wlm_equipment_edit', {'id':equipment.id} )}}"> <i class="icon-pencil"></i> </a> </h4>  
+		
+		<dl class="dl-horizontal">
+			<dt>Taille</dt>   		<dd>  	{{ equipment.size }}  </dd>
+			<dt>Code Barre</dt>  	<dd>	{{ equipment.code }}</dd>
+		</dl>
+
+
+		
+
+		
+
+	</div>
+	
+	<div id="content" class="span6">
+		<h4>Données du Master <a href="{{path('wlm_equipment_editMaster', {'id':equipment.master.id} )}}"  ><i class="icon-pencil"></i></a></h4>  
+		
+		<dl class="dl-horizontal">
+			<dt>Nom</dt>  <dd> {{ equipment.master.name }} </dd>
+			<dt>Marque</dt>   <dd>  {{ equipment.master.manufacturer }}   </dd>
+			<dt>Description</dt>  <dd>{{ equipment.master.description }} </dd>
+			<dt>Prix</dt>  <dd>{{ equipment.master.price }} </dd>
+			
+		</dl>	
+	</div>
+		
+</div>
+<hr>
+		<h4>Historique </h4> 
+		
+		
+		<table class="table table-hover">
+		  <thead>
+		    <tr>
+		      <th>Date de départ</th>
+		      <th>Date de retour</th>		
+		      <th>Client</th>
+		
+		    </tr>
+		  </thead>
+		  <tbody>
+		  {% for rent in rents %}  
+		  <tr>
+		    <td>    {{ rent.outDate|date("d/m/Y")	}} </td>
+		    <td>    {{ rent.inDate|date("d/m/Y")	}} </td>
+		    <td> <a  href="{{path('wlm_client_profile', {'id':rent.client.id} )}}"> {{ rent.client.lastName		}}  {{ rent.client.firstName		}} </a> </td>
+			<td> <a  href="{{path('wlm_rent_edit', {'id':rent.id} )}}"> <i class="icon-pencil"></i> </a> </td>
+		  </tr>
+		  {% endfor %}
+		  </tbody>
+		</table>  
+
+{% endblock %}
+
+
+
+
+

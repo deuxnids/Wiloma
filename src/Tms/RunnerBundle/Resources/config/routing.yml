@@ -1,0 +1,7 @@
+tms_runner_listAll:
+    pattern:  /runner
+    defaults: { _controller: TmsRunnerBundle:Default:index }
+
+tms_runner_edit:
+    pattern:  /runner/{id}
+    defaults: { _controller: TmsRunnerBundle:Default:edit }

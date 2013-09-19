@@ -1,0 +1,25 @@
+wlm_rent_add:
+    pattern:  /rent/add/{id}
+    defaults: { _controller: WlmOperationBundle:Operation:add }
+    
+wlm_rents:
+    pattern:  /rent
+    defaults: { _controller: WlmOperationBundle:Operation:index }
+
+wlm_rent_edit:
+    pattern:  /rent/edit/{id}
+    defaults: { _controller: WlmOperationBundle:Operation:edit }
+
+wlm_pdf:
+    pattern:  /rent/pdf/{id}
+    defaults: { _controller: WlmOperationBundle:Operation:createPdf}
+    
+wlm_operation_delete:
+    pattern:  /rent/delete/{id}
+    defaults: { _controller: WlmOperationBundle:Operation:delete }
+
+
+wlm_location_add:
+    pattern:  /rent/{clientId}/{id}
+    defaults: { _controller: WlmOperationBundle:Operation:add}
+    

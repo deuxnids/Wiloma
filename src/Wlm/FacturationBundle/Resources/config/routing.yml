@@ -1,0 +1,3 @@
+wlm_facturation_client:
+    pattern:  /client/facturation/{id}
+    defaults: { _controller: WlmFacturationBundle:Facturation:facturation }

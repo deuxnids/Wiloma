@@ -1,0 +1,25 @@
+wlm_client_homepage:
+    pattern:  /client
+    defaults: { _controller: WlmClientBundle:Client:index  }
+
+wlm_client_profile:
+    pattern:  /client/profile/{id}
+    defaults: { _controller: WlmClientBundle:Client:profile  }
+    
+wlm_client_add:
+    pattern:  /client/add/
+    defaults: { _controller: WlmClientBundle:Client:addClient  }
+
+wlm_client_edit:
+    pattern:  /client/edit/{id}
+    defaults: { _controller: WlmClientBundle:Client:edit  }
+    
+wlm_client_delete:
+    pattern:  /client/delete/{id}
+    defaults: { _controller: WlmClientBundle:Client:delete  }
+    
+wlm_client_scanner:
+    pattern:  /client/scanner/{id}
+    defaults: { _controller: WlmClientBundle:Client:scanner  }
+
+

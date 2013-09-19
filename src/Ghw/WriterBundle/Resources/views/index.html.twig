@@ -1,0 +1,45 @@
+
+{% extends 'GhwWriterBundle::layout.html.twig' %}
+
+
+{% block bodyWriter %}
+
+Voici la liste des requetes pas encore traitées 
+<br>
+
+<div class="accordion" id="accordion2">
+
+{% for request in listeRequests %}
+
+    <div class="accordion-group">
+      
+  <div class="accordion-heading">
+
+    
+    {{ request.user}}
+    <p class="text-right">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse{{ request.id}}">  voir +  </a> </p>
+    </div>
+    <div id="collapse{{ request.id}}" class="accordion-body collapse ">
+    <div class="accordion-inner">
+    {{ request.description}}
+    </div>
+    </div>
+  </div>
+
+{% endfor %}
+
+
+    	
+
+</div>
+
+
+
+
+
+
+
+
+
+{% endblock %}

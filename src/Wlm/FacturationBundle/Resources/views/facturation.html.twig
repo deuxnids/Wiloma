@@ -1,0 +1,70 @@
+<dl class="dl-horizontal">
+	<dt>A payer</dt>   <dd>  {{ amount }}  CHF</dd>
+</dl>
+ <a href="#pay" role="button" class="btn btn-success" data-toggle="modal">Encaisser</i></a>
+
+<div id="pay" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">Facturation</h3>
+  </div>
+  <div class="modal-body">
+
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Du</th>
+      <th>Au</th>
+      <th>Matériel</th>
+      <th>Code Bar</th>
+      <th>Total</th>
+      <th>Payé</th>
+      <th>Dû</th>
+      <th> <a class="reload-facturation" href="#"> <i class="icon-repeat"></i> </a></th>
+
+    </tr>
+  </thead>
+  <tbody>
+  
+  {% for rent in rents %}  
+  <tr  >
+  	<td>    {{ rent.outDate|date("d/m/Y")}} 	</td>
+    <td>    {{ rent.inDate|date("d/m/Y")}} 		</td>
+    <td> 	{{ rent.equipment.master.name}} 	</td>
+    <td> 	{{ rent.equipment.code}}   			</td>
+   
+    <td> <div class="price" pathAtt="{{ path('wlm_pay_operation',{'id':rent.id }) }}"> 
+    		 {{ rent.getPrice()}} </div> </td>
+    	<td> {{ rent.getAmountOfTills }}  </td>
+    	<td> {{ rent.getAmountDue }}      </td>
+    <th> <a class="tip-top" href="#"> <i class="icon-remove"></i> </a> </th>
+   
+  </tr>
+  {% endfor %}
+  </tbody>
+</table> 
+
+
+  </div>
+  <div class="modal-footer">
+    <button id=payButton class="btn btn-success" data-dismiss="modal" aria-hidden="true">  Payer  <span id="total"> </span> CHF
+</button>
+
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+

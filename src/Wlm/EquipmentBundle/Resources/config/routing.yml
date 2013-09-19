@@ -1,0 +1,51 @@
+wlm_equipment_master:
+    pattern:  /master
+    defaults: { _controller: WlmEquipmentBundle:Master:index }
+    
+wlm_equipment_addMaster:
+    pattern:  /master/add
+    defaults: { _controller: WlmEquipmentBundle:Master:add }
+
+wlm_equipment_masterProfile:
+    pattern:  /master/{id}
+    defaults: { _controller: WlmEquipmentBundle:Master:profile  }
+
+wlm_equipment:
+    pattern:  /equipment
+    defaults: { _controller: WlmEquipmentBundle:Equipment:index}
+
+wlm_equipment_equipmentProfile:
+    pattern:  /equipment/profile/{id}
+    defaults: { _controller: WlmEquipmentBundle:Equipment:profile  }
+
+
+wlm_equipment_add:
+    pattern:  /equipment/add/{id}
+    defaults: { _controller: WlmEquipmentBundle:Equipment:add }
+    
+wlm_equipment_deleteMaster:
+    pattern:  /master/delete/{id}
+    defaults: { _controller: WlmEquipmentBundle:Master:delete }
+    
+wlm_equipment_deleteEquipment:
+    pattern:  /equipment/delete/{id}
+    defaults: { _controller: WlmEquipmentBundle:Equipment:delete }
+
+
+wlm_equipment_edit:
+    pattern:  /equipment/edit/{id}
+    defaults: { _controller: WlmEquipmentBundle:Equipment:edit }
+    
+wlm_equipment_setIn:
+    pattern:  /equipment/setIn/{id}
+    defaults: { _controller: WlmEquipmentBundle:Equipment:setIn }
+    
+wlm_equipment_setOut:
+    pattern:  /equipment/setOut/{id}
+    defaults: { _controller: WlmEquipmentBundle:Equipment:setOut }
+    
+wlm_equipment_editMaster:
+    pattern:  /master/edit/{id}
+    defaults: { _controller: WlmEquipmentBundle:Master:edit }
+
+

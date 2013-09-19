@@ -1,0 +1,7 @@
+parameters:
+#    ghw_match.example.class: Ghw\MatchBundle\Example
+
+services:
+#    ghw_match.example:
+#        class: %ghw_match.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

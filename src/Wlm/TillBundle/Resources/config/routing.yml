@@ -1,0 +1,13 @@
+wlm_till:
+    pattern:  /till
+    defaults: { _controller: WlmTillBundle:Till:index }
+    
+wlm_till_delete:
+    pattern:  /till/delete/{id}
+    defaults: { _controller: WlmTillBundle:Till:delete }
+
+wlm_pay_operation:
+    pattern:  /till/pay/operation/{id}
+    defaults: { _controller: WlmTillBundle:Till:pay }
+    
+    

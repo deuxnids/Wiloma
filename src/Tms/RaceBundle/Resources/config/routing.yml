@@ -1,0 +1,19 @@
+tms_race:
+    pattern:  /race
+    defaults: { _controller: TmsRaceBundle:Default:index }
+tms_stop:
+    pattern:  /race/stop
+    defaults: { _controller: TmsRaceBundle:Default:stop }
+tms_saveStartTime:
+    pattern:  /race/saveStart
+    defaults: { _controller: TmsRaceBundle:Default:saveStartTime }
+tms_saveStopTime:
+    pattern:  /race/saveStop
+    defaults: { _controller: TmsRaceBundle:Default:saveStopTime }
+tms_deleteStopTime:
+    pattern:  /race/deleteStop
+    defaults: { _controller: TmsRaceBundle:Default:deleteStopTime }
+tms_mobile:
+    pattern:  /mobile
+    defaults: { _controller: TmsRaceBundle:Default:mobile }
+

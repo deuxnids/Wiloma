@@ -1,0 +1,26 @@
+
+{% extends 'GhwClientBundle::layout.html.twig' %}
+
+
+{% block bodyClient %}
+
+
+<div class="alert alert-success">
+ bien joue
+</div>
+<h3>Formulaire d'article</h3>
+ 
+<div class="well">
+<form class="form-search">
+  <input type="text" class="input-medium search-query">
+  <button type="submit" class="btn">Search</button>
+</form>
+  <form  method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+    <input type="submit" class="btn btn-primary" />
+  </form>
+</div>
+
+
+
+{% endblock %}

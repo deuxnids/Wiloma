@@ -1,0 +1,7 @@
+ghw_writer_homepage:
+    pattern:  /writer
+    defaults: { _controller: GhwWriterBundle:Default:index }
+
+ghw_writer_request:
+    pattern:  /writer/request/{id}
+    defaults: { _controller: GhwWriterBundle:Default:request }

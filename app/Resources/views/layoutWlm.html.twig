@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+    <title>{% block title %}Wiloma{% endblock %}</title>
+             <script type="text/javascript" src="{{ asset('js/jquery-1.10.1.min.js') }}"></script>
+            <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+
+            {% for msg in app.session.flashbag.get('notice') %}
+                <div class="flash-message">
+                    <em>Notice</em>: {{ msg }}
+                </div>
+            {% endfor %}
+    
+    
+    
+ 
+    {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
+    {% endblock %}
+  </head>
+ 
+  <body>
+    <div class="container">
+
+ 
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="{{path('wlm_client_homepage')}}">Wiloma</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Clientèle <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                  <li><a href="{{path('wlm_client_homepage')}}">Liste des clients</a></li>
+                  <li><a href="{{path('wlm_client_add')}}">Nouveau  client</a></li>
+                                    </ul>
+                </li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Equipements <b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                   <li><a href="{{path('wlm_equipment')}}">Equipement</a></li>
+                <hr> 
+                  <li><a href="{{path('wlm_equipment_master')}}">Masters</a></li>
+                  <li><a href="{{path('wlm_equipment_addMaster')}}">Nouveau Master</a></li>
+                  </ul>
+                </li>
+              <li><a href="{{path('wlm_rents')}}">Locations</a></li>
+              <li><a href="{{path('wlm_till')}}">Caisse</a></li> 
+              
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+<hr>
+<hr>
+
+      <div class="row">
+        <div id="content" class="span12">
+        <div id = "alert_placeholder"></div>
+        
+          {% block body %}
+          {% endblock %}
+        </div>
+      </div>
+ 
+      <hr>
+ 
+      <footer>
+      </footer>
+    </div>
+    
+
+ 
+{% block javascripts %}
+    {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
+        <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/wiloma.js') }}"></script>
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <script type="text/javascript">
+            google.load("visualization", "1", {packages:["corechart", 'table', 'treemap', 'gauge']});
+        </script>
+        
+{% endblock %}
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

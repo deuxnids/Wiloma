@@ -1,0 +1,63 @@
+{% extends '::layoutTms.html.twig' %}
+
+{% block body %}
+
+
+<button class="btn btn-large btn-block btn-primary" id="arrivalButton" type="button">Arrival</button>
+
+
+<a href="http://zxing.appspot.com/scan?ret={{encodedUrl}}" class="btn btn-large btn-block">Scan it </a>
+<div id="zone"> 
+   {% include 'TmsRaceBundle:Default:listArrivals.html.twig'
+               with {'arrival_list': arrival_list}
+    %}
+</div>
+
+ 
+
+{% endblock %}
+
+{% block javascripts_modal %}
+<script>
+    $(document).ready(function() {
+
+        var button = $('#arrivalButton');
+        button.click(function() {
+            var time = new Date().getTime();
+            var DATA = 'stop=' + time;
+                $.ajax({
+                    type: "POST",
+                    url: "{{path('tms_saveStopTime')}}",
+                    data: DATA,
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        $('#zone').html(textStatus);
+                    },
+                    success: function(htmlResponse) {
+                        $('#zone').html(htmlResponse);
+                    }
+                });
+                return false;
+        });
+
+    $(document).on("click",'#deleteButton' ,function(){
+                var DATA = 'deleteId=' + $(this).attr('attrId');
+                $.ajax({
+                    type: "POST",
+                    url: "{{path('tms_deleteStopTime')}}",
+                    data: DATA,
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        $('#zone').html(textStatus);
+                    },
+                    success: function(htmlResponse) {
+                        $('#zone').html(htmlResponse);
+                    }
+                });        
+        return false;
+    });
+
+
+    });
+
+
+</script>
+{% endblock %}

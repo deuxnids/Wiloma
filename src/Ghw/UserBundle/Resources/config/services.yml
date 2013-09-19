@@ -1,0 +1,18 @@
+parameters:
+#    ghw_user.example.class: Ghw\UserBundle\Example
+
+services:
+#    ghw_user.example:
+#        class: %ghw_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    ghw_user.registration.form.type:
+        class: Ghw\UserBundle\Form\Type\RegistrationFormType
+        arguments: [%fos_user.model.user.class%]
+        tags:
+            - { name: form.type, alias: ghw_user_registration }
+
+    ghw_user.authentification_handler:
+        class: Ghw\UserBundle\Handler\AuthentificationHandler
+        calls:
+            - [ setContainer, [ @service_container ] ]

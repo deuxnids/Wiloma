@@ -1,0 +1,7 @@
+parameters:
+#    tms_race.example.class: Tms\RaceBundle\Example
+
+services:
+#    tms_race.example:
+#        class: %tms_race.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,3 @@
+ghw_match_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: GhwMatchBundle:Default:index }

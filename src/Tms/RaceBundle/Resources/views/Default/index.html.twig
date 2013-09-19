@@ -1,0 +1,45 @@
+{% extends '::layoutTms.html.twig' %}
+
+{% block body %}
+
+
+<button class="btn btn-large btn-block btn-primary" id="startButton" type="button">Start Race</button>
+<button class="btn btn-large btn-block" type="button">Stop Race</button>
+
+
+
+
+<div id="zone"> 
+</div>
+
+{% endblock %}
+
+
+{% block javascripts_modal %}
+
+ 
+<script>
+    $(document).ready(function() {
+        var button = $('#startButton');
+        button.click(function() {
+        var time = new Date().getTime();
+        var DATA = 'start=' + time;
+            $.ajax({
+                type: "POST",
+                url: "{{path('tms_saveStartTime')}}",
+                data: DATA,
+                error: function(jqXHR, textStatus, errorThrown) {
+                    $('#zone').html(textStatus);
+                },
+                success: function(htmlResponse) {
+                    $('#zone').html(htmlResponse);
+                    console.log(htmlResponse);
+                }
+            });
+            return false;
+        });
+    });
+</script>
+
+
+{% endblock %}
