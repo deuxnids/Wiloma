@@ -9,7 +9,7 @@
   	        <div id = "alert_placeholder_modal"></div>
   	
   	<div class="modal-body">
-		<form method="post" {{ form_enctype(form) }}>
+		<form id="modalForm" method="post" {{ form_enctype(form) }}>
 				 {{ form_errors(form) }}
 		
 		{{ form_row (form._token) }}
@@ -25,12 +25,13 @@
 				<tbody>
 				</tbody>
 			</table>
-			<input class="btn btn-primary" type="submit" value="Enregistrer" />
 			<a href="#" id="btn_add" class="btn btn-success"> Ajouter <i class="icon-plus-sign icon-white"></i></a>
 			
 		</form>
    	</div>
   	<div class="modal-footer">
+  	      <input id="newClientModalSubmit" type="submit" value="Enregistrer" form="modalForm" class="btn btn-primary" />
+  	
 	    <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
   	</div>
 </div>

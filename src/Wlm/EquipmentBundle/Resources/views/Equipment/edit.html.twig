@@ -9,11 +9,12 @@
   <div class="modal-body">
   <form id="newClientModalForm" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
-    <input id="newClientModalSubmit" type="submit" value="Enregistrer" class="btn btn-primary" />
   </form>
 
   </div>
   <div class="modal-footer">
+        <input id="newClientModalSubmit" type="submit" value="Enregistrer" form="modalForm" class="btn btn-primary" />
+  
     <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
 
   </div>
