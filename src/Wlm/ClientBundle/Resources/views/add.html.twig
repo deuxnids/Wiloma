@@ -18,12 +18,12 @@
 			<dt>Email</dt>   <dd>{{ form_errors(form.email) }}{{ form_widget(form.email) }}</dd>			
 		</dl>
           
-          
-    <input id="newClientModalSubmit" type="submit" value="Enregistrer" class="btn btn-primary" />
   </form>
 
   </div>
   <div class="modal-footer">
+      <input id="newClientModalSubmit" type="submit" form="modalForm" value="Enregistrer" class="btn btn-primary" />
+  
     <button class="btn" data-dismiss="modal" aria-hidden="true">Fermer</button>
 
   </div>
