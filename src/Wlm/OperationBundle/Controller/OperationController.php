@@ -165,7 +165,7 @@ class OperationController extends Controller
 	
 		$rents = $repository->findByClient($client);
 		return $this->render('WlmOperationBundle:Rent:list.html.twig', array(
-				'rents'=> $rents,
+				'rents'=> $rent,
 		));
 	}
     
