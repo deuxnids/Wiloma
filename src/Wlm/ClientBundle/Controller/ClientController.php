@@ -98,7 +98,7 @@ class ClientController extends Controller
     			}
     		}
     	    	
-    		return $this->render('WlmClientBundle::edit.html.twig', array(
+    		return $this->render('WlmClientBundle::add.html.twig', array(
     				'form' => $form->createView(),
     				'client'=> $client
     		));
