@@ -172,6 +172,7 @@ class OperationController extends Controller
 	public function deleteAction(Operation $operation)
 	{
 		$em = $this->getDoctrine()->getManager();
+		$operation->getEquipment()->setStatus('in');
 		$em->remove($operation);
 		$em->flush();
 	
