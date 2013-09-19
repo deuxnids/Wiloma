@@ -7,19 +7,15 @@
   </div>
   <div class="modal-body">
   <form id="modalForm" method="post" {{ form_enctype(form) }}>
-
-
-
+{{ form_widget(form._token) }}
+  
           		<dl class="dl-horizontal">
 			<dt>Nom</dt>     <dd>{{ form_errors(form.lastName) }} {{ form_widget(form.lastName) }}</dd>
 			<dt>Prénom</dt>  <dd>{{ form_errors(form.firstName) }} {{ form_widget(form.firstName) }}</dd>
-			<dt>Ville</dt>   <dd>          {{ form_errors(form.city) }}{{ form_widget(form.city) }}</dd>
-			<dt>Adresse</dt>   <dd>       {{ form_errors(form.address) }}{{ form_widget(form.address) }}
-			</dd>
-			<dt>Code Postal</dt>   <dd>          {{ form_errors(form.zip) }} {{ form_widget(form.zip) }}
-			</dd>
-			<dt>Email</dt>   <dd>          {{ form_errors(form.email) }}{{ form_widget(form.email) }}
-			</dd>			
+			<dt>Ville</dt>   <dd>{{ form_errors(form.city) }}{{ form_widget(form.city) }}</dd>
+			<dt>Adresse</dt> <dd>{{ form_errors(form.address) }}{{ form_widget(form.address) }}</dd>
+			<dt>Code Postal</dt><dd>{{ form_errors(form.zip) }} {{ form_widget(form.zip) }}</dd>
+			<dt>Email</dt>   <dd>{{ form_errors(form.email) }}{{ form_widget(form.email) }}</dd>			
 		</dl>
           
           
