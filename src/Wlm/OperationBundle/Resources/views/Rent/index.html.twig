@@ -7,22 +7,18 @@
   <div id="content" class="span8">
     <h3>Locations</h3>
   </div>
-  <div id="content" class="span4">
-  <br>
-    <form id="form-search-client" method="get" >
-      <input name="searchField" type="text" class="input-medium search-query">
-      <button type="submit" class="btn">Chercher</button>
-    </form>
-  </div>
+
 </div>
 
-<table class="table table-hover">
+<table class="table table-hover" id="list">
   <thead>
     <tr>
       <th> Date de départ </th>
       <th> Date de retour </th>
       <th> Equipement </th>
-      <th> Client </th> 
+      <th> Client </th>
+            <th>  </th> 
+       
     </tr>
   </thead>
   <tbody>
@@ -39,7 +35,7 @@
 				{{rent.client.lastName}} {{ rent.client.firstName}}
     			</a>  
     </td>
-    <th> <a class="btn-small btn-danger" href="{{ path('wlm_operation_delete',{'id':rent.id}) }}"><i class="icon-trash icon-white"></i></a> </th>
+    <th> <a class="delete-confirm btn-small btn-danger" href="{{ path('wlm_operation_delete',{'id':rent.id}) }}"><i class="icon-trash icon-white"></i></a> </th>
     
     
 
