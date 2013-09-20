@@ -21,8 +21,9 @@
  
     {% block stylesheets %}
       <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}" type="text/css" />
+       <script type="text/javascript" src="{{ asset('js/DataTables-1.9.4/media/js/jquery.dataTables.js') }}"></script>
+   
     {% endblock %}
-                 <script type="text/javascript" src="{{ asset('js/DataTables-1.9.4/media/js/jquery.dataTables.js') }}"></script>
     
   </head>
  
@@ -87,7 +88,6 @@
  
 {% block javascripts %}
     {# Ajoutez ces lignes JavaScript si vous comptez vous servir des fonctionnalités du bootstrap Twitter #}
-        <script type="text/javascript" src="{{ asset('js/bootstrap.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
         <script type="text/javascript" src="{{ asset('js/wiloma.js') }}"></script>
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
