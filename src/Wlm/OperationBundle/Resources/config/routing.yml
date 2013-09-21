@@ -19,7 +19,17 @@ wlm_operation_delete:
     defaults: { _controller: WlmOperationBundle:Operation:delete }
 
 
+wlm_rent_setIn:
+    pattern:  /rent/setIn/{id}
+    defaults: { _controller: WlmOperationBundle:Operation:setIn }
+    
+wlm_rent_setOut:
+    pattern:  /rent/setOut/{id}
+    defaults: { _controller: WlmOperationBundle:Operation:setOut }
+
 wlm_location_add:
     pattern:  /rent/{clientId}/{id}
     defaults: { _controller: WlmOperationBundle:Operation:add}
+    
+
     

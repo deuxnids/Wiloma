@@ -3,24 +3,17 @@
 {% block body %}
 
 <div class="row">
-	<div id="content" class="span6">
+	<div id="content" class="span4">
 		<h4>	<a class="btn-small btn-danger" href="{{ path('wlm_equipment_deleteEquipment',{'id':equipment.id}) }}"><i class="icon-trash icon-white"></i></a>
 		 
 		 Données spécifiques <a  href="{{path('wlm_equipment_edit', {'id':equipment.id} )}}"> <i class="icon-pencil"></i> </a> </h4>  
-		
 		<dl class="dl-horizontal">
 			<dt>Taille</dt>   		<dd>  	{{ equipment.size }}  </dd>
 			<dt>Code Barre</dt>  	<dd>	{{ equipment.code }}</dd>
 		</dl>
-
-
-		
-
-		
-
 	</div>
 	
-	<div id="content" class="span6">
+	<div id="content" class="span8">
 		<h4>Données du Master <a href="{{path('wlm_equipment_editMaster', {'id':equipment.master.id} )}}"  ><i class="icon-pencil"></i></a></h4>  
 		
 		<dl class="dl-horizontal">

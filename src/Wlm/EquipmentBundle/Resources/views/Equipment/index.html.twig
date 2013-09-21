@@ -14,7 +14,6 @@
       <th>Nom</th>
        <th>Taille</th>
       
-      <th>Statut</th>
       
     </tr>
   </thead>
@@ -23,7 +22,6 @@
   <tr>
     <td>      <a href="{{path('wlm_equipment_equipmentProfile', {'id':equipment.id} )}}"> {{ equipment.code}} - {{ equipment.master.manufacturer}} - {{ equipment.master.name}}</a></td>
     <td>      <a href="{{path('wlm_equipment_equipmentProfile', {'id':equipment.id} )}}"> {{ equipment.size}} </a></td>
-    <td>     {{ equipment.status}} </td>
   </tr>
   {% endfor %}
   </tbody>

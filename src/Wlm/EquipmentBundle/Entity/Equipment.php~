@@ -26,14 +26,6 @@ class Equipment
      * @ORM\JoinColumn(nullable=true, onDelete="CASCADE")
      */
     private $master;
-    
-   
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="status", type="string", length=255)
-     */
-    private $status;
 
     /**
      * @var string
@@ -70,6 +62,10 @@ class Equipment
      */
     private $category;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Wlm\OperationBundle\Entity\Rent", mappedBy="equipment")
+     */
+    private $rents;
 
     
     
@@ -81,11 +77,8 @@ class Equipment
     	$this->reference = "not defined";
     	$this->code = "not defined";
     	$this->size = "not defined";
-    	$this->status = "not defined";
     	 
-    	 
-    	 
-    	 
+        	 
     }
     
     
@@ -103,28 +96,8 @@ class Equipment
         return $this->id;
     }
 
-    /**
-     * Set status
-     *
-     * @param string $status
-     * @return Equipment
-     */
-    public function setStatus($status)
-    {
-        $this->status = $status;
-    
-        return $this;
-    }
 
-    /**
-     * Get status
-     *
-     * @return string 
-     */
-    public function getStatus()
-    {
-        return $this->status;
-    }
+
 
     /**
      * Set size

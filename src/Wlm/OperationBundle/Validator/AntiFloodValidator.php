@@ -32,11 +32,14 @@ class AntiFloodValidator extends ConstraintValidator
     }
     else 
     {
-    	if( $equipment->getStatus()=='out')
+    	foreach ($equipment->getRents() as $rent)
     	{
-    		$this->context->addViolation($constraint->message, array('%string%' => $value));
-    		
-    	}    	
+    		if( $rent->getStatus()=='out')
+    			{
+    				$this->context->addViolation($constraint->message, array('%string%' => $value));
+    			}
+    	}
+    	 	
     }
   }
 }

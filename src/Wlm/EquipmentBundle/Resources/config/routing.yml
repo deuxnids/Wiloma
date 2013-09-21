@@ -36,13 +36,6 @@ wlm_equipment_edit:
     pattern:  /equipment/edit/{id}
     defaults: { _controller: WlmEquipmentBundle:Equipment:edit }
     
-wlm_equipment_setIn:
-    pattern:  /equipment/setIn/{id}
-    defaults: { _controller: WlmEquipmentBundle:Equipment:setIn }
-    
-wlm_equipment_setOut:
-    pattern:  /equipment/setOut/{id}
-    defaults: { _controller: WlmEquipmentBundle:Equipment:setOut }
     
 wlm_equipment_editMaster:
     pattern:  /master/edit/{id}

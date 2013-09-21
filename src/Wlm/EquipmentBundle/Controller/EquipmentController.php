@@ -110,28 +110,6 @@ class EquipmentController extends Controller
     
     
     
-    public function setInAction(Equipment $equipment)
-    {
-    	$equipment->setStatus("in");
-    
-    	$em = $this->getDoctrine()->getManager();
-    	$em->persist($equipment);
-    	$em->flush();
-    
-    	return new Response('true' );
-    }
-    
-    
-    public function setOutAction(Equipment $equipment)
-    {
-    	$equipment->setStatus("out");
-    
-    	$em = $this->getDoctrine()->getManager();
-    	$em->persist($equipment);
-    	$em->flush();
-    
-    	return new Response('true' );
-    }
     
     
     

@@ -75,7 +75,7 @@ class OperationController extends Controller
 	       		$equipment = new Equipment;
 				$equipment = $repository2->findOneByCode($code);
 				$rent->setEquipment($equipment);
-				$equipment->setStatus('out');
+				//$equipment->setStatus('out');
 		      	$em->persist($rent);
 			}
         		
@@ -144,7 +144,7 @@ class OperationController extends Controller
 		
 		foreach ($rents as $rent)
 		{
-			if($rent->getAmountDue()!=0 || $rent->getEquipment()->getStatus()=="out")
+			if($rent->getAmountDue()!=0 || $rent->getStatus()=="out")
 			{
 				$activeRents->add($rent);
 			}
@@ -172,7 +172,6 @@ class OperationController extends Controller
 	public function deleteAction(Operation $operation)
 	{
 		$em = $this->getDoctrine()->getManager();
-		$operation->getEquipment()->setStatus('in');
 		$em->remove($operation);
 		$em->flush();
 	
@@ -258,11 +257,33 @@ class OperationController extends Controller
 		
 	}
 	
+	
+	public function setInAction(Rent $rent)
+	{
+		$rent->setStatus("in");
+		$em = $this->getDoctrine()->getManager();
+		$em->persist($rent);
+		$em->flush();
+		return new Response('true' );
+	}
+	
+	
+	public function setOutAction(Rent $rent)
+	{
+		$rent->setStatus("out");
+	
+		$em = $this->getDoctrine()->getManager();
+		$em->persist($rent);
+		$em->flush();
+	
+		return new Response('true' );
+	}
+	
 	/**
 	 * @Route("/Operation/{clientId}/{id}")
 	 * @ParamConverter("client", class="WlmClientBundle:Client", options={"id" = "clientId"})
 	 */
-    /*
+	/*
     public function addAction(Client $client, Material $material )
     {
     	$Operation = new Operation;

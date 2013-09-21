@@ -26,8 +26,10 @@ class Operation
      */
     private $id;
     
+
+    
     /**
-     * @ORM\ManyToOne(targetEntity="Wlm\EquipmentBundle\Entity\Equipment")
+     * @ORM\ManyToOne(targetEntity="Wlm\EquipmentBundle\Entity\Equipment",inversedBy="rents")
      * @ORM\JoinColumn(nullable=true, onDelete="CASCADE")
      */
     private $equipment;

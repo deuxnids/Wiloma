@@ -27,6 +27,13 @@ class Rent extends Operation
      */
     private $inDate;
 
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=255)
+     */
+    private $status;
 
     /**
      * Set outDate
@@ -80,5 +87,33 @@ class Rent extends Operation
     	$dDiff = $this->getOutDate()->diff($this->getInDate());
     	$price = ($dDiff->days) * $pricePerDay;
     	return $price; 
+    }
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     * @return Rent
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+    
+    public function __construct()
+    {
+    	$this->status = 'out';
     }
 }
