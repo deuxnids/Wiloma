@@ -38,12 +38,17 @@
   </tbody>
 </table> 
 
+
+        
+
+{% endblock %}
+
+{% block javascripts %}
 <script>
 $(function() {
 {{ gchart_line_chart(dataTable2, 'chart2', 800, 200) }}
 });
 </script>
-        
 
 {% endblock %}
 
