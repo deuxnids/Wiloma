@@ -186,6 +186,7 @@ $(document).ready(function() {
 	                return true;
 	            },
 	            success: function(){ 
+	            	$('.modal-body').html('sdd');
 	        		$('#alertModal').modal('show');
 
 	                    return true;
