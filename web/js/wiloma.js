@@ -151,10 +151,7 @@ if ( $.fn.DataTable.TableTools ) {
 
 
 $(document).ready(function() {
-	 
-
-
-		
+	 		
 	$('#list').dataTable( {
 		"sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",
 		"sPaginationType": "bootstrap",
@@ -186,12 +183,11 @@ $(document).ready(function() {
 	            type: 'POST',
 	            async: true,
 	            error: function(){
-	            	bootstrap_alert.warning('ERROR');
 	                return true;
 	            },
 	            success: function(){ 
-	            	bootstrap_alert.warning('Your text goes here');
-	            	
+	        		$('#alertModal').modal('show');
+
 	                    return true;
 	            }
 	        });
@@ -205,11 +201,9 @@ $(document).ready(function() {
 	            type: 'POST',
 	            async: true,
 	            error: function(){
-	            	bootstrap_alert.warning('ERROR');
 	                return true;
 	            },
 	            success: function(){ 
-	            	bootstrap_alert.warning('Your text goes here');
 	                    return true;
 	            }
 	        });
@@ -218,19 +212,7 @@ $(document).ready(function() {
 	});
 	//\\//\\ *** ************************** *** //\\//\\	 
 
-	//\\//\\ *** alert *** //\\//\\
 
-	
-	
-	bootstrap_alert = function() {}
-	bootstrap_alert.warning = function(message) {
-	            $('#alert_placeholder').html('<div class="alert"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
-	}
-	
-	alert_modal = function() {}
-	alert_modal.warning = function(message) {
-	            $('#alert_placeholder_modal').html('<div class="alert"><a class="close" data-dismiss="alert">×</a><span>'+message+'</span></div>')
-	}
 	
 	
 	//\\//\\ *** ************************** *** //\\//\\	 

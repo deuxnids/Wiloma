@@ -114,9 +114,7 @@ class OperationController extends Controller
         			$repository2 = $this->getDoctrine()
         				->getManager()
         				->getRepository('WlmEquipmentBundle:Equipment');
-        			$rent->getEquipment()->setStatus('in');
         			$equipment = $repository2->findOneByCode($code);
-        			$equipment->setStatus('out');
         			 
         			$rent->setEquipment($equipment);
         			$em->persist($rent);

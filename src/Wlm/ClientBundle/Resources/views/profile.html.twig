@@ -28,7 +28,7 @@
 <hr>
 <h4>  
 		<div class="btn-group">
-			<a class="btn  dropdown-toggle" data-toggle="dropdown" href="#"> Locations  <span class="caret"></span> </a>
+			<a class="btn  dropdown-toggle" data-toggle="dropdown" href="#"> Locations  <span class="caret"></span> </a> 
 			<ul class="dropdown-menu">
                 <li class="dropdown-submenu"> <a tabindex="-1" href="#">Nouveau</a>
     				<ul class="dropdown-menu">
@@ -44,6 +44,7 @@
   				</li>
 			</ul>
 		</div>
+		: {% if list == "all" %}toutes{% else %}actives{% endif %}
 </h4> 
 
 {% if list == "all" %}
